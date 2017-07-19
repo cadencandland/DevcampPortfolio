@@ -65,12 +65,6 @@ ActiveRecord::Schema.define(version: 20170718142422) do
     t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id", using: :btree
   end
 
-  create_table "tipics", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
