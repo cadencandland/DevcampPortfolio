@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718142422) do
+ActiveRecord::Schema.define(version: 20170725160318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170718142422) do
     t.text     "thumb_image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "position"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -63,6 +64,12 @@ ActiveRecord::Schema.define(version: 20170718142422) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id", using: :btree
+  end
+
+  create_table "tipics", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "topics", force: :cascade do |t|
